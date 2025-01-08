@@ -35,14 +35,14 @@
 // Counter.increment();
 // console.log(Counter.getCount()); // 2
 
-const obj = {
-    name: 'Alice',
-    arrow: () => {
-        console.log(`Hello, ${obj.name}`)
-    }
-};
+// const obj = {
+//     name: 'Alice',
+//     arrow: function() {
+//         console.log(`Hello, ${this.name}`)
+//     }
+// };
 
-obj.arrow();
+// obj.arrow();
 
 // function greet(name = 'Guest') {
 //     console.log(`Welcome, ${name}`);
@@ -63,3 +63,9 @@ obj.arrow();
 //     console.log(innerArrow());
 //     }
 // outerFunction(1, 2, 3); // [1, 2, 3]
+
+function average(...rest) {
+    return (rest.reduce((a, b) => a + b, 0))/rest.length;
+    }
+    console.log(average(10, 20, 30)); // 20
+    console.log(average(5, 15, 25, 35)); // 20
