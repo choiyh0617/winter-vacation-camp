@@ -35,11 +35,31 @@
 // Counter.increment();
 // console.log(Counter.getCount()); // 2
 
-// const obj = {
-//     name: 'Alice',
-//     arrow: () => {
-//         console.log("Hello, Alice")
-//     }
-// };
+const obj = {
+    name: 'Alice',
+    arrow: () => {
+        console.log(`Hello, ${obj.name}`)
+    }
+};
 
-//     obj.arrow();
+obj.arrow();
+
+// function greet(name = 'Guest') {
+//     console.log(`Welcome, ${name}`);
+// }
+
+// greet(); // Welcome, Guest
+
+// function sum(...rest) {
+//     return rest.reduce((a, b) => a + b, 0);
+// }
+//     console.log(sum(1, 2, 3)); // 6
+//     console.log(sum(4, 5, 6, 7)); // 22
+
+// function outerFunction() {
+//     const innerArrow = () => {
+//         return Array.from(arguments)
+//     }
+//     console.log(innerArrow());
+//     }
+// outerFunction(1, 2, 3); // [1, 2, 3]
