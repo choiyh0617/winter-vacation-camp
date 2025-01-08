@@ -21,16 +21,25 @@
 // console.log(circle.toString()); // Shape: Circle with radius: 5
 
 
-class Counter {
-    static count = 0;
-    static increment() {
-        Counter.count++;
-    }
-    static getCount() {
-        return Counter.count;
-    }
-}
+// class Counter {
+//     static count = 0;
+//     static increment() {
+//         Counter.count++;
+//     }
+//     static getCount() {
+//         return Counter.count;
+//     }
+// }
 
-Counter.increment();
-Counter.increment();
-console.log(Counter.getCount()); // 2
+// Counter.increment();
+// Counter.increment();
+// console.log(Counter.getCount()); // 2
+
+// const obj = {
+//     name: 'Alice',
+//     arrow: () => {
+//         console.log("Hello, Alice")
+//     }
+// };
+
+//     obj.arrow();
