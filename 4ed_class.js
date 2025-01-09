@@ -13,20 +13,21 @@
 //     console.error("실패",error.message)
 // })
 
-const myPromise = (number)=>
-new Promise((resolve, reject)=>{
-    const success = true;
-    if (number % 2 ===0) {
-        resolve(`${number}짝수`)
-    } else{
-        reject(new Error(`${number}홀수`))
-    }
-})
+// const myPromise = (number)=>
+// new Promise((resolve, reject)=>{
+//     const success = true;
+//     if (number % 2 ===0) {
+//         resolve(`${number}짝수`)
+//     } else{
+//         reject(new Error(`${number}홀수`))
+//     }
+// })
 
-myPromise(4)
-.then((result)=>{
-    console.log("성공",result)
-})
-.catch((error)=>{
-    console.error("실패",error.message)
-})
+// myPromise(4)
+// .then((result)=>{
+//     console.log("성공",result)
+// })
+// .catch((error)=>{
+//     console.error("실패",error.message)
+// })
+

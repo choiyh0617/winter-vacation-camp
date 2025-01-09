@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Axios PATCH 요청</title>
+<!-- Axios CDN -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<h1>Axios PATCH 요청</h1>
+<button id="patchButton">PATCH 요청 보내기</button>
+<pre id="output"></pre>
+<script>
+document.getElementById('patchButton').addEventListener('click', async () => {
+const url = 'https://jsonplaceholder.typicode.com/posts/1'; // ID가 1인 게시물 업데이트
+
+const outputElement = document.getElementById('output');
+try {
+const response = await axios.patch(url, {
+title: 'Updated Title'
+});
+outputElement.textContent = JSON.stringify(response.data, null, 2);
+} catch (error) {
+outputElement.textContent = `에러 발생: ${error.message}`;
+}
+});
+</script>
+</body>
+</html>

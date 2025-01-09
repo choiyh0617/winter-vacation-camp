@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axios GET 요청 실습</title>
+    <!-- Axios CDN 불러오기 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1>Axios GET 요청 실습</h1>
+    <button id="fetchDataButton">데이터 가져오기</button>
+    <pre id="output"></pre>
+    <script>
+        // 버튼 클릭 시 GET 요청 실행
+        document.getElementById('fetchDataButton').addEventListener('click', async () => {
+        const url = 'https://jsonplaceholder.typicode.com/todos/1'; // 테스트용
+        
+        //JSONPlaceholder API URL
+        
+        const outputElement = document.getElementById('output');
+        try {
+        // Axios를 사용하여 GET 요청
+        const response = await axios.get(url);
+        // 결과를 JSON 형식으로 출력
+        outputElement.textContent = JSON.stringify(response.data, null, 2);
+        console.log('가져온 데이터:', response.data);
+        } catch (error) {
+        // 에러 처리
+        outputElement.textContent = `에러 발생: ${error.message}`;
+        console.error('에러 발생:', error);
+        }
+        });
+    </script>
+</body>
+</html>

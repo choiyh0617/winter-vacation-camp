@@ -1,0 +1,84 @@
+sample1.html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>명언 슬라이더</title>
+    <style>
+      /* 슬라이더 스타일 */
+      #quote-slider {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        width: 50%;
+        margin: 50px auto;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      blockquote {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      blockquote.hidden {
+        opacity: 0;
+      }
+
+      cite {
+        font-size: 1.2em;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 명언 슬라이더 -->
+    <div id="quote-slider">
+      <blockquote id="quote-text">"로딩 중..."</blockquote>
+      <cite id="quote-author">- 작성자</cite>
+    </div>
+
+    <script>
+      const quoteText = document.getElementById("quote-text");
+      const quoteAuthor = document.getElementById("quote-author");
+
+      // 명언 데이터를 Fetch로 가져오는 함수
+      async function fetchQuote() {
+        // 여기에 Fetch API를 사용하여 명언 데이터를 가져오는 코드를 작성하세요.
+        // URL: https://api.adviceslip.com/advice
+        // 데이터 형식: JSON 형식으로 반환됨
+        // 데이터에서 필요한 정보: 명언 데이터(data.slip.advice)와 작성자("Advice Slip")
+        // return {
+        //   text: "학생들이 작성해야 합니다.",
+        //   author: "작성자 이름",
+        // };
+      }
+
+      // 명언을 화면에 업데이트하는 함수
+      function updateQuote({ text, author }) {
+        // 애니메이션 효과를 위해 클래스를 추가/제거
+        quoteText.classList.add("hidden");
+        quoteAuthor.classList.add("hidden");
+        setTimeout(() => {
+          quoteText.textContent = `"${text}"`;
+          quoteAuthor.textContent = `- ${author}`;
+          quoteText.classList.remove("hidden");
+          quoteAuthor.classList.remove("hidden");
+        }, 500);
+      }
+
+      // setInterval로 5초마다 새로운 명언을 가져와 업데이트
+      // Fetch API로 데이터를 가져오고 업데이트하는 코드를 작성하세요.
+
+      // 초기 명언 설정
+      // Fetch API로 초기 데이터를 가져오고 화면에 표시하는 코드를 작성하세요.
+      //   예를 들면 아래와 같이 호출
+      // fetchQuote().then(updateQuote);
+    </script>
+  </body>
+</html>
